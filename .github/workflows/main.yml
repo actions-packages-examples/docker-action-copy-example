@@ -11,7 +11,7 @@ jobs:
     - name: List directory contents
       run: ls -alrth
     - name: Hello World Action
-      uses: ./
+      uses: ./.github/actions/myaction
       with:
         who-to-greet: 'francisfuzz'
     - name: List directory contents
