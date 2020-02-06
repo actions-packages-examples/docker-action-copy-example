@@ -6,7 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: ./
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: List directory contents
+      run: ls -alrth
+    - name: Hello World Action
+      uses: ./
       with:
         who-to-greet: 'francisfuzz'
