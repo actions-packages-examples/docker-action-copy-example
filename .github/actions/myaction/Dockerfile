@@ -6,7 +6,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 # Attempt to change working directory
 # https://docs.docker.com/engine/reference/builder/#workdir
-WORKDIR /github/workspace
+# WORKDIR /github/workspace
 
 RUN ls -alrth
 
