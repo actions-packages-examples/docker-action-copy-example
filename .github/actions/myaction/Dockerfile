@@ -9,7 +9,7 @@ COPY entrypoint.sh /entrypoint.sh
 # WORKDIR /github/workspace
 
 # Inspect present working directory
-RUN pwd
+RUN apt-get install tree && tree
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
