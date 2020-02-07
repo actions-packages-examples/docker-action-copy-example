@@ -4,11 +4,15 @@ FROM alpine:3.9
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
-# Attempt to change working directory
-# https://docs.docker.com/engine/reference/builder/#workdir
-# WORKDIR /github/workspace
+WORKDIR /usr/src/app
 
-RUN ls -alrth
+# install app dependencies
+COPY package*.json ./
+
+RUN npm install
+
+# Bundle app source
+COPY . .
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
